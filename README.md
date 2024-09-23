@@ -1,8 +1,6 @@
 # BARK - Blink As A Service
 **Proof-of-concept**
 
-![BARK Protocol Logo](https://ucarecdn.com/f242e5dc-8813-47b4-af80-6e6dd43945a9/barkicon.png)
-
 **BARK Protocol** is an innovative **Blink-As-A-Service** platform that enables developers to create lightning-fast, atomic actions on the Solana blockchain. Leveraging Solana's high-speed architecture, BARK Blinks revolutionize DeFi, Social Finance, NFTs, and Web3 Commerce applications. BARK Blinks streamline blockchain interactions, allowing seamless execution of multiple actions within a single, atomic transaction.
 
 ## Features
