@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Color Variables */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --light-gray: #f5f5f5;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark Mode Colors */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --light-gray: #f5f5f5;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  /* Base Styles */
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    @apply text-muted-foreground; /* Accessibility */
+  }
+
+  /* Typography */
+  h1 {
+    @apply text-4xl md:text-5xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-semibold;
+  }
+
+  p {
+    @apply text-base md:text-lg;
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary transition duration-200;
+  }
+
+  .btn-primary:disabled {
+    @apply bg-opacity-50 cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary transition duration-200;
+  }
+
+  .btn-destructive {
+    @apply bg-destructive text-destructive-foreground hover:bg-destructive-foreground hover:text-destructive transition duration-200;
+  }
+
+  /* Input Styling */
+  input,
+  textarea {
+    @apply border border-border rounded-md px-4 py-2 focus:ring-2 focus:ring-primary transition duration-200;
+  }
+
+  input:focus-visible,
+  textarea:focus-visible {
+    @apply ring-2 ring-primary;
+  }
+
+  input:focus,
+  textarea:focus {
+    @apply border-primary;
+  }
+
+  /* Utility Classes */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .grid-gap {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+  }
+
+  /* Hover Effects on Cards */
+  .card {
+    @apply transition-transform transform hover:scale-105 shadow-lg;
+  }
+
+  /* Dark Mode Improvements */
+  .dark .card {
+    @apply bg-card text-card-foreground;
+  }
+
+  /* Blink Animation */
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  .blink {
+    animation: blink 1.3s infinite;
+  }
+
+  /* Accessibility Enhancements */
+  .text-link {
+    @apply text-primary underline hover:text-primary-foreground;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  /* Responsive Typography */
+  @media (max-width: 640px) {
+    h1 {
+      @apply text-3xl; /* Smaller h1 on mobile */
+    }
+
+    h2 {
+      @apply text-2xl; /* Smaller h2 on mobile */
+    }
+
+    p {
+      @apply text-sm; /* Smaller paragraph text on mobile */
+    }
+  }
+
+  /* Responsive Padding for Containers */
+  .container {
+    @apply px-4 sm:px-6 lg:px-8; /* Responsive padding */
+  }
+
+  /* Card Styling */
+.card {
+  background-color: var(--card-bg);
+  color: var(--foreground);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+  
+
+  /* Responsive Buttons */
+  .btn {
+    @apply py-2 px-4 text-sm sm:text-base; /* Adjust button text size */
+  }
+
+  /* Responsive Grid */
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4;
+  }
+
+  /* Toast Notifications */
+  .toast-container {
+    @apply fixed bottom-4 right-4 z-50 flex flex-col gap-2; /* Adjusted for mobile */
+  }
+
+  .toast {
+    @apply flex items-center justify-between p-4 rounded shadow-lg text-sm; /* Responsive toast size */
+  }
+}

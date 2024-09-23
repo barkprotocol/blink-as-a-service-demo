@@ -1,0 +1,43 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/next"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/$1"
+      }
+    ],
+    "env": {
+      "NEXT_PUBLIC_SUPABASE_URL": "@supabase-url",
+      "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@supabase-anon-key",
+      "NEXT_PUBLIC_SOLANA_NETWORK": "devnet",
+      "NEXT_PUBLIC_SOLANA_RPC_URL": "https://api.devnet.solana.com",
+      "NEXT_PUBLIC_MINT_API_URL": "https://api.actions.barkprotocol.net/mint",
+      "TOKEN_PROGRAM_ID": "TokenkegQfeZyiNwAJbNbGKPFXkQd5J8X8wnF8MPzYx",
+      "NFT_PROGRAM_ID": "gEb7nD9yLkau1P4uyMdke9byJNrat61suH4vYiPUuiR",
+      "DEFAULT_WALLET_ADDRESS": "gEb7nD9yLkau1P4uyMdke9byJNrat61suH4vYiPUuiR",
+      "WALLETCONNECT_BRIDGE": "https://bridge.walletconnect.org",
+      "METADATA_SERVICE_URL": "https://api.example.com/upload-metadata",
+      "ERROR_TRACKING_SERVICE_URL": "https://errors.example.com/report",
+      "SECRET_KEY": "your_secret_key_here",
+      "JWT_SECRET": "your_jwt_secret_key_here"
+    },
+    "build": {
+      "env": {
+        "NEXT_PUBLIC_SUPABASE_URL": "@supabase-url",
+        "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@supabase-anon-key"
+      }
+    },
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/api/$1"
+      }
+    ]
+  }
+  

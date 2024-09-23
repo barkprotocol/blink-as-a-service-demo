@@ -1,0 +1,74 @@
+/* Override styles for the Solana wallet button */
+.wallet-adapter-button {
+    background-color: #1e1e1e !important;
+    color: white !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    height: 32px !important;
+    line-height: 32px !important;
+    padding: 0 12px !important;
+    border-radius: 6px !important;
+    transition: background-color 0.2s ease-in-out !important;
+  }
+  
+  .wallet-adapter-button:hover {
+    background-color: #101010 !important;
+  }
+  
+  .wallet-adapter-button:not([disabled]):hover {
+    background-color: #101010 !important;
+  }
+  
+  .wallet-adapter-button-trigger {
+    background-color: #1a202c !important;
+  }
+  
+  .wallet-adapter-button-trigger:not([disabled]):hover {
+    background-color: #101010 !important;
+  }
+  
+  .wallet-adapter-button .wallet-adapter-button-start-icon,
+  .wallet-adapter-button .wallet-adapter-button-end-icon {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  
+  /* Styles for the wallet dropdown */
+  .wallet-adapter-dropdown {
+    display: inline-block !important;
+  }
+  
+  /* Styles for the wallet modal */
+  .wallet-adapter-modal-wrapper {
+    background-color: #ffffff !important;
+    border-radius: 10px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .wallet-adapter-modal-button-close {
+    background-color: #f4f4f4 !important;
+  }
+  
+  .wallet-adapter-modal-title {
+    color: #1a202c !important;
+  }
+  
+  .wallet-adapter-modal-list .wallet-adapter-button {
+    font-size: 14px !important;
+    justify-content: flex-start !important;
+  }
+  
+  /* Dark mode styles */
+  @media (prefers-color-scheme: dark) {
+    .wallet-adapter-modal-wrapper {
+      background-color: #101010 !important;
+    }
+  
+    .wallet-adapter-modal-button-close {
+      background-color: #4c4b48 !important;
+    }
+  
+    .wallet-adapter-modal-title {
+      color: #f4f4f4 !important;
+    }
+  }
